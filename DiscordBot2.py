@@ -260,7 +260,7 @@ class AudioPlayer2:
         # voice.play(source, after=self.nextTrack) #after=lambda x: self.nextTrack)
 
         voice.stop()
-        audiostreamprocess = subprocess.Popen(["python", "audiostream.py", current.url], stdout=subprocess.PIPE)
+        audiostreamprocess = subprocess.Popen(["python3.8", "/home/admin/code/discord_yt_bot/DiscordYTBot/audiostream.py", current.url], stdout=subprocess.PIPE)
         # source = discord.FFmpegPCMAudio(audiostreamprocess.stdout, pipe=True, stderr=audiostreamprocess.stderr)
         source = await self.getAudioSource(audiostreamprocess)
         voice.play(source, after=lambda x: self.nextTracksync(x))
